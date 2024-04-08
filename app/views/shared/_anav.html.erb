@@ -32,7 +32,7 @@
             </li>
 
             <li>
-                <%= link_to admin_path,data:{"turbo-method": :delete,"turbo-confirm":"Are you sure you wnat to logout?"},class:"block px-4 py-2 hover:bg-green-300 rounded text-white text-left" do%>
+                <%= link_to destroy_admin_session_path,data:{"turbo-method": :delete,"turbo-confirm":"Are you sure you wnat to logout?"},class:"block px-4 py-2 hover:bg-green-300 rounded text-white text-left" do%>
                     <span class="hidden md:inline-block">Sign Out</span>
                 <%end%>
             </li>
