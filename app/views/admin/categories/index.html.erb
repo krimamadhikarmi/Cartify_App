@@ -1,0 +1,20 @@
+<div class="w-full">
+  <%if notice.present?%>
+    <p style="color: green"><%= notice %></p>
+  <%end%>
+  <div class="flex justify-between items-center mt-5">
+    <h1 class="font-bold text-4xl mb-4">Categories</h1>
+    <%= link_to "New category", new_admin_category_path,class:"rounded-lg py-3 px-5 bg-blue-600 text-white block fonnt-medium" %>
+  </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 px-2 mb-4 pt-12">
+  <% @admin_categories.each do |category|%>
+  <div class="border border-purple-200 p-4 rounded-lg  hover:shadow-lg hover:shadow-pink-400 transition duration-300 transform hover:scale-110 mb-4">
+      <%= image_tag category.image if category.image.attached? %>
+      <%= link_to admin_category_path(category), class: "text-center block font-body text-lg font-semibold text-primary transition-colors hover:text-green dark:text-white dark:hover:text-secondary" do %>
+        <%= category.name%>
+      <% end %>
+  </div>
+  <%end%>
+</div>
+

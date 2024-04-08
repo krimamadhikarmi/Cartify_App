@@ -1,0 +1,19 @@
+<nav class="fixed w-full top-0 bg-green-300 z-10 py-2">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-14">
+            <a href="/" class="flex items-center space-x-3">
+                <span class="self-center text-3xl font-semibold whitespace-nowrap font-pacifico text-white ml-8">
+                    Cartify
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </span>
+            </a>
+            <div class="hidden sm:flex sml:ml-6 items-center justify-center absolute top-0 right-0 mr-4 mt-2">
+                <div class="flex space-x-10">
+                    <%= link_to cart_path,class: "text-white py-2 rounded-md text-md font-medium" do %>
+                        <i class="fa-solid fa-cart-plus text-3xl"></i>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

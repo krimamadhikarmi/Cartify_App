@@ -1,0 +1,10 @@
+<div class="max-w-lg mx-auto mt-8 p-6 bg-green-200 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Editing Category</h1>
+
+    <%= render "form", admin_category: @admin_category %>
+
+    <div class="mt-8 flex items-center">
+        <%= link_to "Show", [:admin, @admin_category], class: "btn-secondary mr-4" %>
+        <%= link_to "Back to categories", admin_categories_path, class: "btn-secondary" %>
+    </div>
+</div>
