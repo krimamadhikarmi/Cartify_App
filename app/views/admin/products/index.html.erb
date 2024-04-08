@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+<div class="w-full">
+  <%if notice.present?%>
+    <p style="color: green"><%= notice %></p>
+  <%end%>
+  <div class="flex justify-between items-center mt-5">
+    <h1 class="font-bold text-4xl mb-4">Products</h1>
+    <%= link_to "New Product", new_admin_product_path,class:"rounded-lg py-3 px-5 bg-blue-600 text-white block fonnt-medium" %>
+  </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 px-2 mb-4 pt-12">
+  <% @admin_products.each do |product|%>
+  <div class="border border-purple-200 p-4 rounded-lg  hover:shadow-lg hover:shadow-pink-400 transition duration-300 transform hover:scale-110 mb-4">
+      <%= image_tag product.image if product.image.attached? %>
+      <%= link_to admin_product_path(product), class: "text-center block font-body text-lg font-semibold text-primary transition-colors hover:text-green dark:text-white dark:hover:text-secondary" do %>
+        <%= product.name%>
+      <% end %>
+      Price: <%= product.price%>
+  </div>
+  <%end%>
+</div>
+
+
