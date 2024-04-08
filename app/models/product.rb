@@ -2,6 +2,8 @@ class Product < ApplicationRecord
     has_one_attached :image
     belongs_to :category
 
+    has_many :stocks, dependent: :destroy
+
     before_create :generate_sku
 
   private
