@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :admin do
     resources :orders
     resources :products do
@@ -25,5 +26,8 @@ Rails.application.routes.draw do
   resources :products,only: [:show]
   get "admin" => "admin#index"
   get "cart" => "carts#show"
- 
+  post "checkout" => "checkouts#create"
+  get "success" => "checkouts#success"
+  get "cancel" => "checkouts#cancel"
+  post "webhook" => "webhooks#stripe"
 end

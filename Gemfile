@@ -71,3 +71,5 @@ end
 gem 'devise', '~> 4.9', '>= 4.9.3'
 
 gem "image_processing", ">= 1.2"
+
+gem 'stripe'

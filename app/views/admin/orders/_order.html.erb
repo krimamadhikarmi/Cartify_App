@@ -1,33 +1,32 @@
 <div id="<%= dom_id order %>">
-  <p>
-    <strong>Customer email:</strong>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Customer email:</strong>
     <%= order.customer_email %>
   </p>
 
-  <p>
-    <strong>Fullfilled:</strong>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Fulfilled:</strong>
     <%= order.fulfilled %>
   </p>
 
-  <p>
-    <strong>Total:</strong>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Total:</strong>
     <%= order.total %>
   </p>
 
-  <p>
-    <strong>Address:</strong>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Address:</strong>
     <%= order.address %>
   </p>
-  
-    <% if order.order_products.any?%>
-    <strong>Product:</strong>
-      <%order.order_products.each do |orderproduct|%>
-        Name:<%=orderproduct.product.name %><br/>
-        Size:<%=orderproduct.size %><br/>
-        Quantity:<%=orderproduct.quantity %>
-      <%end%>
-    <%end%>
 
+  <% if order.order_products.any? %>
+    <strong class="block font-medium mb-1">Products:</strong>
+    <% order.order_products.each do |op| %>
+      <%= op.product.name %> 
+      <%= op.size %>
+      <%= op.quantity %>
+    <% end %>
+  <% end %>
 
   <% if action_name != "show" %>
     <%= link_to "Show this order", [:admin, order], class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
@@ -35,4 +34,3 @@
     <hr class="mt-6">
   <% end %>
 </div>
-

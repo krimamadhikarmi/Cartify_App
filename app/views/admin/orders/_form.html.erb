@@ -1,6 +1,6 @@
-<%= form_with(model:[:admin,admin_order]) do |form| %>
+<%= form_with(model: [:admin, admin_order], class: "contents") do |form| %>
   <% if admin_order.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(admin_order.errors.count, "error") %> prohibited this admin_order from being saved:</h2>
 
       <ul>
@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :customer_email, style: "display: block" %>
-    <%= form.text_field :customer_email %>
+  <div class="my-5">
+    <%= form.label :customer_email %>
+    <%= form.text_field :customer_email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div>
-    <%= form.label :fullfilled, style: "display: block" %>
-    <%= form.check_box :fullfilled %>
+  <div class="my-5">
+    <%= form.label :fulfilled %>
+    <%= form.check_box :fulfilled, class: "block mt-2 h-5 w-5" %>
   </div>
 
-  <div>
-    <%= form.label :total, style: "display: block" %>
-    <%= form.number_field :total %>
+  <div class="my-5">
+    <%= form.label :total %>
+    <%= form.number_field :total, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+  <div class="my-5">
+    <%= form.label :address %>
+    <%= form.text_field :address, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
