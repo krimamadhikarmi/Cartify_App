@@ -1,10 +1,12 @@
-<h1>Editing stock</h1>
+<h1 class="text-3xl font-bold mb-4 mt-4 text-center">Editing stock</h1>
 
 <%= render "form", admin_stock: @admin_stock %>
 
 <br>
 
-<div>
-  <%= link_to "Show this stock", [:admin,@product,@admin_stock] %> |
-  <%= link_to "Back to stocks", admin_product_stocks_path %>
+<div class="flex items-center justify-center">
+  <%= link_to "Show this stock", [:admin,@product,@admin_stock] ,class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %> 
+  <%= link_to "Back to stocks", admin_product_stocks_path ,class: "ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
 </div>
+  
+    

@@ -1,15 +1,16 @@
 <div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
+  <div class="mx-auto mt-12">
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
-
+    <h1 class="text-center text-3xl font-bold">Stock</h1>
     <%= render @admin_stock %>
-
-    <%= link_to "Edit this admin_stock", edit_admin_product_stock_path(@admin_stock.product,@admin_stock), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+   <div class="mt-4 ">
+    <%= link_to "Edit Stock", edit_admin_product_stock_path(@admin_stock.product,@admin_stock), class: "mt-2 rounded-lg py-3 px-5 text-white bg-blue-500 inline-block font-medium" %>
     <div class="inline-block ml-2">
-      <%= button_to "Destroy this admin_stock", admin_product_stock_path(@admin_stock), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to "Destroy Stock", admin_product_stock_path(@admin_stock), method: :delete, class: "mt-2 rounded-lg py-3 px-5 text-white bg-red-500 font-medium" %>
     </div>
-    <%= link_to "Back to admin_stocks", admin_product_stocks_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Back to Stocks", admin_product_stocks_path, class: "ml-2 rounded-lg py-3 px-5 bg-blue-500 text-white inline-block font-medium" %>
+  </div>
   </div>
 </div>

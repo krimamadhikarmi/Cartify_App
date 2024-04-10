@@ -14,6 +14,10 @@
 
   <body class="bg-gray-200">
     <%= render "shared/unavbar"%>
+    <div class="mt-24 px-12">
+    <p class="notice text-white "><%= notice %></p>
+    <p class="alert text-white "><%= alert %></p>
+    </div>
     <%= yield %>
     <%= render "shared/footer"%>
   </body>

@@ -37,13 +37,16 @@ export default class extends Controller {
         }
       )
       localStorage.setItem("cart",JSON.stringify(cartArray))
-
     }
   }
 
   selectSize(e) {
     this.sizeValue = e.target.value
     const selectedSizeEl = document.getElementById("selected-size") 
-    selectedSizeEl.innerText = `Selected Size: ${this.sizeValue}`
+    if (selectedSizeEl) {
+        selectedSizeEl.innerText = `Selected Size: ${this.sizeValue}`
+    } else {
+        console.error("Element with id 'selected-size' not found.")
+    }
   }
 }

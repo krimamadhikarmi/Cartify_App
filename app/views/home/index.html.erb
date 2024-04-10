@@ -1,16 +1,24 @@
-<div class="container mx-auto max-w-screen-md">
-    <h1 class="text-4xl font-semibold text-center text-gray-800 mt-24 font-pacifico">Category</h1>
+<div class="container mx-auto max-w-screen-lg">
+  <h1 class="text-3xl font-semibold text-left text-blue-800 mt-24 font-pacifico">Categories</h1>
+      <div class="mt-4 flex justify-end">
+        <%= form_tag(search_categories_path, method: "get") do %>
+          <%= text_field_tag :query, params[:query], placeholder: "Search categories...", class: "px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" %>
+          <%= button_tag "Search", type: "submit", class: "ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" %>
+        <% end %>
+      </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 px-2">
-      <% @main_categories.each do |category| %>
-        <div class="category-card p-2 shadow-lg rounded-md transition duration-300 transform hover:scale-105">
-          <%= link_to category_path(category) do %>
-            <div class="aspect-w-1 aspect-h-1 mb-2">
-              <%= category.image.present? ? image_tag(category.image, class: "object-cover w-full h-full rounded-md") : image_tag("http://via.placeholder.com/512", class: "object-cover w-full h-full rounded-md") %>
-            </div>
-            <p class="text-md font-semibold text-center text-gray-800 truncate"><%= category.name %></p>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
+        <% @main_categories.each do |category| %>
+          <div class="category-card overflow-hidden shadow-lg rounded-md transition duration-300 transform hover:scale-105">
+            <%= link_to category_path(category) do %>
+              <div class="aspect-w-16 aspect-h-6 p-4" >
+                <%= category.image.present? ? image_tag(category.image, class: "object-cover w-full h-full rounded-t-md") : image_tag("http://via.placeholder.com/512", class: "object-cover w-full h-full rounded-t-md") %>
+              </div>
+              <div class="py-2">
+                <p class="text-lg text-center font-semibold text-gray-800 truncate"><%= category.name %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+</div>
